@@ -2,4 +2,4 @@
 在分支上修改，不commit，不push
 在分支上修改，commit，不push
 修改了master，在分支上merge是否能更新分支 ——可以
-在分支上修改，不commit，master上能否看到
+在分支上修改，不commit，master上能否看到——能，这样相当于直接在master上直接操错

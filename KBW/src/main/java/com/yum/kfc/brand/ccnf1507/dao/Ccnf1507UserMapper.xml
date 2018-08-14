@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.ccnf1507.dao.Ccnf1507UserMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.ccnf1507.pojo.Ccnf1507User">
+		INSERT INTO ccnf1507_user ([userId],[nickName],[sex],[province],[city],[firstTime]) 
+		VALUES (#{userId},#{nickName},#{sex},#{province},#{city}, #{firstTime})
+	</insert>
+	
+	<select id="getNickName" parameterType="String" resultType="String">
+		select top 1 nickName from ccnf1507_user where userId=#{userId}
+    </select>
+    
+    <select id="getUserCount" parameterType="String" resultType="int">
+		select count(*) from ccnf1507_user where userId=#{userId}
+    </select>
+</mapper>

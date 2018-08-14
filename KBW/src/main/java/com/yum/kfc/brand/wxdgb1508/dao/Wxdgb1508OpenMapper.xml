@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.wxdgb1508.dao.Wxdgb1508OpenMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.wxdgb1508.pojo.Wxdgb1508Open">
+		INSERT INTO wxdgb1508_open
+			([id],[userId],[channelType],[deviceId],[deviceType],[inviterId],[inviteChannelType],[ipAddr],[openTime],[sceneId],[tagContent])
+		VALUES
+			(#{id},#{userId},#{channelType},#{deviceId},#{deviceType},#{inviterId},#{inviteChannelType},#{ipAddr},#{openTime},#{sceneId},#{tagContent})
+	</insert>
+	
+	<select id="getTagContent" parameterType="String" resultType="String">
+		select tagContent from wxdgb1508_open with(nolock) where id=#{openId}
+    </select>
+</mapper>

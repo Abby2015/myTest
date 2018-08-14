@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yum.kfc.brand.book1712.dao.Book1712ShareMapper">
+	<insert id="saveShare">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(shareId)" />
+		INSERT INTO [${SOCIALDB}]..[book1712Share_${tbl_sid}]
+			([orderId],[createTime],[openId],[unionId],[nickname],[headImg],[brandUserId],[ssoUserId],[crmUserCode],[phone],[shareId],[isSharer])
+		VALUES
+			(#{orderId},#{createTime},#{openId},#{unionId},#{nickname},#{headImg},#{brandUserId},#{ssoUserId},#{crmUserCode},#{phone},#{shareId},#{isSharer})
+	</insert>
+	
+	<select id="getUserBookShare" resultType="com.yum.kfc.brand.book1712.pojo.Book1712Share">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(shareId)" />
+		select * from [${SOCIALDB}]..[book1712Share_${tbl_sid}] with(nolock)
+		where [brandUserId]=#{brandUserId}
+	</select>
+	
+	<select id="getBookShares" resultType="com.yum.kfc.brand.book1712.pojo.Book1712Share">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(shareId)" />
+		select * from [${SOCIALDB}]..[book1712Share_${tbl_sid}] with(nolock)
+		where [shareId]=#{shareId} order by createTime 
+	</select>
+	
+	<select id="getTotalBookShares" resultType="int">
+		select sum(num) from (
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_0] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_1] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_2] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_3] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_4] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_5] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_6] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_7] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_8] with(nolock) UNION ALL
+			select count(*) as num from [${SOCIALDB}]..[book1712Share_9] with(nolock) 
+		) as totalCount
+	</select>
+</mapper>

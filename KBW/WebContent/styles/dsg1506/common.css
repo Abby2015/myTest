@@ -1,0 +1,170 @@
+﻿@charset "utf-8";
+* {
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+iframe {
+	opacity: 0
+}
+a, input, div, textarea {
+	outline: 0
+}
+html, body, h1, h2, h3, h4, ul, li, ol, dl, dt, dd, form, p, input, textarea, th, td {
+	margin: 0;
+	padding: 0
+}
+input, textarea {
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 62.5%;
+	font-family: "Microsoft YaHei", Arial;
+	color: #333;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+ul, dl, ol, li {
+	list-style: none
+}
+img {
+	border: 0
+}
+h1, h2, h3, h4 {
+	font-weight: normal
+}
+em, i, strong {
+	font-style: normal
+}
+a {
+	text-decoration: none
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0
+}
+.clearfix {
+*zoom:1
+}
+input[type="text"], input[type="number"], input[type="tel"], input[type="email"], input[type="search"], input[type="password"] {
+	-webkit-appearance: none
+}
+input::-webkit-input-placeholder {
+color:#737373
+}
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline
+}
+audio:not([controls]) {
+	display: none;
+	height: 0
+}
+.wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 1.4rem
+}
+.main {
+	height: 100%;
+	margin: 0 auto;
+	background-color: #e5b88b;
+	position: relative;
+	touch-action: none;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	transform: translate3d(0px, 0px, 0px)
+}
+.page {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	display: none;
+}
+.button {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.ticket_button {
+	width: 25%;
+	position: absolute;
+	top: 18px;
+	right: 30%;
+	z-index: 1;
+}
+.rule_button {
+	width: 25%;
+	position: absolute;
+	top: 18px;
+	right: 8px;
+	z-index: 1;
+}
+.page5 .ticket_button, .page6 .ticket_button, .page7 .ticket_button {
+	right: 8px;
+	width: 28%;
+}
+.area {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	display: box;
+	box-pack: center;
+	box-align: center;
+	box-orient: vertical;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto
+}
+.footer {
+	background: url(../../images/dsg1506/footer.png) no-repeat center bottom;
+	background-size: contain;
+	width: 100%;
+	height:50px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1
+}
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.88);
+	display: none
+}
+.pop_share {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	display: none
+}
+.pop_share1 {
+	background: url(../../images/dsg1506/pop_share1.png) no-repeat center top;
+	background-size: 91%;
+}
+.pop_share2 {
+	background: url(../../images/dsg1506/pop_share2.png) no-repeat center top;
+	background-size: 91%;
+}
+.pop_share3 {
+	background: url(../../images/dsg1506/pop_share3.png) no-repeat center top;
+	background-size: 91%;
+}

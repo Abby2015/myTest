@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.gkslz1606.dao.Gkslz1606DrawMapper">
+
+    <select id="queryIsUserDraw" resultType="Long">
+		select count(*) from gkslz1606_draw with(nolock) where phone=#{phone} 
+	</select>
+	
+    <insert id="insert" parameterType="com.yum.kfc.brand.gkslz1606.pojo.Gkslz1606Draw">
+    	INSERT INTO gkslz1606_draw
+    		([phone],[sid],[openId],[userId],[channelType],[deviceType],[deviceId],[winAward],[awardType],[awardCodeId],[ipAddr],[drawTime])
+     	VALUES
+     		 (#{phone},#{sid},#{openId},#{userId},#{channelType},#{deviceType},#{deviceId},#{winAward},#{awardType},#{awardCodeId},#{ipAddr},#{drawTime})
+    </insert>
+
+    
+</mapper>

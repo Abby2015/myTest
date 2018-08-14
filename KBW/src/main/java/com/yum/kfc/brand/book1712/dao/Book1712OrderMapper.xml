@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yum.kfc.brand.book1712.dao.Book1712OrderMapper">
+	
+	<insert id="saveOrder">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(brandUserId)" />
+		INSERT INTO [${SOCIALDB}]..[book1712Order_${tbl_sid}]
+			([id],[status],[createTime],[crmUserCode],[phone],[ssoUserId],[brandUserId],[activityId],[categoryName],[count],[payType],[payChannel],[subTotal],[grandTotal],[order],[payUrl],[openId],[unionId],[nickname],[headImg],[fromShareId])
+		VALUES
+			(#{orderId},#{status},#{createTime},#{crmUserCode},#{phone},#{ssoUserId},#{brandUserId},#{activityId},#{categoryName},#{count},#{payType},#{payChannel},#{subTotal},#{grandTotal},#{order},#{payUrl},#{openId},#{unionId},#{nickname},#{headImg},#{fromShareId})
+	</insert>
+	
+	<insert id="saveOrderByHour">
+		INSERT INTO [${SOCIALDB}]..[orderHour_${hour}]
+			([orderId],[createTime])
+		VALUES
+			(#{orderId},#{createTime})
+	</insert>
+	
+	<update id="updateOrder">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(brandUserId)" />
+		update [${SOCIALDB}]..[book1712Order_${tbl_sid}]
+		set
+			<if test="status2 != null">status2=#{status2},</if>
+			<if test="fromShareId != null">fromShareId=#{fromShareId},</if>
+			<if test="order2 != null">order2=#{order2},</if>
+			<if test="isValid != null">isValid=#{isValid},</if>
+			updateTime=#{updateTime}
+		where [id]=#{orderId}
+	</update>
+	
+	<select id="getUserBookOrder" resultType="com.yum.kfc.brand.book1712.pojo.Book1712Order">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(brandUserId)" />
+		select id as orderId, status2, fromShareId, createTime, crmUserCode, phone, openId, nickname, headImg, unionId
+		from [${SOCIALDB}]..[book1712Order_${tbl_sid}] with(nolock)
+		where [brandUserId]=#{brandUserId} and [isValid]=1
+		order by updateTime desc, createTime desc
+	</select>
+
+	<select id="getUserWxInfo" resultType="map">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.MybatisTblShardStrategy@byLastDigitOrLenMod10(brandUserId)" />
+		select openId, nickname, headImg, unionId from [${SOCIALDB}]..[book1712Order_${tbl_sid}] with(nolock)
+			where [id]=#{orderId}
+	</select>
+	
+	<select id="getNotPaiedOrdersByShareId" resultType="com.yum.kfc.brand.book1712.pojo.Book1712Order">
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_0] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_1] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_2] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_3] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_4] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_5] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_6] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_7] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_8] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+		union all
+		select id orderId, * from [${SOCIALDB}]..[book1712Order_9] with(nolock) where fromshareid=#{shareId} and (status2 is null or (status2!='ORDER_PAID_SUCCESS' and status2!='ORDER_COMPLETED' and status2!='ORDER_PROCESSING'))
+	</select>
+</mapper>

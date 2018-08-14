@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.luh1604.dao.Luh1604UserMapper">
+	<select id="getTotalNumber" resultType="long">
+		select count(*) from luh1604_user with(nolock) 
+	</select>
+	
+    <insert id="insert" parameterType="com.yum.kfc.brand.luh1604.pojo.Luh1604User">
+    	<bind name= "tbl_sid" value="@com.yum.kfc.brand.common.utils.MybatisTblShardStrategy@byCRC32Mod10(#{userId})" />
+    	INSERT INTO luh1604_user_${tbl_sid}
+    		([userId],[token],[headImgPath],[ipAddr],[attendTime])
+     	VALUES
+     		 (#{userId},#{token},#{headImgPath},#{ipAddr},#{attendTime})
+    </insert>
+	
+    <select id="getIdByUserId" resultType="long">
+    	 select number from (select row_number() over (order by attendTime asc) as number, userId from luh1604_user) row 
+    		where userId=#{userId}
+    </select>
+    
+    <select id="getUserPhoto" resultType="String">
+    	 select headImgPath from luh1604_user where userId=#{userId}
+    </select>
+    
+</mapper>

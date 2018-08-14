@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>爆米花爱上花淇淋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link href="http://summer.kfc.com.cn/BMH/styles/bmh1506/common.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://summer.kfc.com.cn/BMH/styles/bmh1506/animate.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://summer.kfc.com.cn/BMH/styles/bmh1506/shake.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://summer.kfc.com.cn/BMH/styles/bmh1506/popcorn.min.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+#wrapper {
+	position: relative;
+	overflow: hidden;
+}
+#scroller {
+	position: absolute;
+}
+</style>
+</head>
+<body>
+<img src="http://summer.kfc.com.cn/BMH/images/bmh1506/share_ice_icon.png" alt="" width="0" height="0"/>
+<div class="am-app">
+<!--首页 start-->
+<div class="am-page page1" style="display:block">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <ul class="button">
+        <li class="ticket_button"><span>我的半价券</span></li>
+        <li class="know_button"><span>了解产品</span></li>
+        <li class="rule_button"><span>活动规则</span></li>
+      </ul>
+      <div class="home_popcorn">
+        <div class="popcorn_p"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/page1.png" alt=""/></div>
+        <div class="start_button"> <span class="heart"><span class="heart1"><span class="heart2"></span></span></span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--首页 end--> 
+
+<!--游戏界面1 start-->
+<div class="am-page page2">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <div class="go_game"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/speak.png" alt=""/></div>
+      <div class="slingshot">
+        <div class="popcorn_icon hands"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--游戏界面1 end--> 
+
+<!--游戏界面2 start-->
+<div class="am-page page3">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <ul class="button left">
+        <li class="time_button"><span>00:00</span></li>
+      </ul>
+      <div class="number">x0</div>
+      <div class="ice_content">
+        <div class="ice_cream">
+          <div class="ice target"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/ice_cream.png" alt=""/></div>
+          <!--<span class="ice_icon"></span> --></div>
+      </div>
+      <div class="bar"> 
+      	<span class="icon"></span> <span class="icon"></span> 
+      	<span class="icon"></span> <span class="icon"></span> 
+      	<span class="icon"></span> <span class="icon"></span>
+      	<span class="icon"></span> <span class="icon"></span>
+      	<span class="icon"></span> <span class="icon"></span>
+      </div>
+      <!--<div class="line"></div>-->
+      <div class="slingshot">
+      	<!--橡皮筋-->
+      	<div class="ballmain">
+        	<div class="l"></div>
+            <div class="r"></div>            
+            <div class="ball"></div>
+        </div>
+        <!--<div class="popcorn_icon element"></div>-->
+        <div class="hand flash"></div>
+      </div>
+      <!--进度条-->
+      <!-- <div class="progress" style="display:none">
+        <div class="progress_bar" style="height:130px;"></div>
+      </div>
+      <div class="new_button" style="display:none;">Button</div> -->
+    </div>
+  </div>
+</div>
+<!--游戏界面2 end--> 
+
+<!--半价券 start-->
+<div class="am-page page6">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <ul class="button">
+        <li class="ticket_button"><span>我的半价券</span></li>
+      </ul>
+      <div class="half_ticket">
+        <div class="ticket_number"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/three_p.png" alt=""/><span class="num">10次</span></div>
+        <div class="ticket"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/ticket.png" alt=""/></div>
+        <div id="pcode"></div>
+        <ul class="button ticket_div">
+          <li class="look_button"></li>
+          <li class="show_button"></li>
+          <li class="again_button1"></li>
+        </ul>
+        <ul class="show_div">
+          <li><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/button_p.png" alt=""/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--半价券 end--> 
+
+<!--无券 start-->
+<div class="am-page page7">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <div class="half_ticket">
+        <div class="three_p"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/ice_cream1.png" alt=""/></div>
+        <div class="ticket_number"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/three_p1.png" alt=""/><span class="num">3次</span></div>
+        <ul class="button ticket_div">
+          <li class="look_button"></li>
+          <li class="show_button"></li>
+        </ul>
+        <ul class="show_div show_div1">
+          <li><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/button_p.png" alt=""/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--无券 end--> 
+
+<!--失败 start-->
+<div class="am-page page8">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <div class="half_ticket">
+        <div class="three_p"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/ice_cream1.png" alt=""/></div>
+        <div class="ticket_number"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/fail_p.png" alt=""/><span class="num">2次</span></div>
+        <ul class="button ticket_div">
+          <li class="again_button1"></li>
+          <li class="guys_button1"></li>
+        </ul>
+		<ul class="show_div show_div1">
+          <li><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/button_p.png" alt=""/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--失败 end--> 
+
+<!--产品介绍 start-->
+<div class="am-page page9">
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <div class="product_desc">
+        <div class="desc"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/desc.png" alt=""/></div>
+        <div class="ice_pro"><img src="http://summer.kfc.com.cn/BMH/images/bmh1506/ice_cream1.png" alt=""/></div>
+        <ul class="button">
+            <li class="back_button"><span>返回</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--产品介绍 end--> 
+
+<!--蒙层背景 end-->
+<div class="overlay"></div>
+<!--分享-->
+<div class="share"></div>
+<!--分享+奖品-->
+<div class="share_prize"></div>
+<!--规则弹层-->
+<div class="pop rule_pop">
+  <div class="content">
+    <div class="rule_logo"></div>
+    <div class="close"></div>
+    <span>活动规则</span>
+    <div id="wrapper" class="cont">
+    <div id="scroller">
+      <p><i>活动时间：2015年6月8日－2015年6月14日</i></p>
+      <p><i>参与方式：</i></p>
+      <p class="clearfix"><span>1</span><em>关注肯德基官方微信，访问“爆米花爱上花淇淋”活动页面，根据提示参与互动：控制弹弓，成功将三颗及其以上爆米花射入花淇淋中，即可得到“狂欢盛典花淇淋”半价券一张。每个用户每日最多只能得一张半价券。</em></p>
+      <p class="clearfix"><span>2</span><em>所有的游戏参与者分享后即可参与抽奖：</em></p>
+      <p class="clearfix"><span>1)</span><em>手机话费中奖结果分享后即刻公布，获奖后需要正确填写手机号；</em></p>
+      <p class="clearfix"><span>2)</span><em>Apple Watch 在活动结束后6月19日随机抽取，6月21日获奖名单公布在肯德基官方微信：
+</em></p>
+      <p><i>活动奖品：</i> </p>
+      <p class="clearfix"><span>1</span><em>20元手机话费一份；每天100份，共700份。</em></p>
+      <p class="clearfix"><span>2</span><em>Apple Watch（38毫米银色铝金属表壳搭配运动型表带）一台；共1台，价值2,588元；
+</em></p>
+	  <p><i>狂欢盛典花淇淋半价券说明： </i></p>
+      <p><strong>请在餐厅现场收银员的指导下点击确认使用 </strong>
+      <p class="clearfix"><span>1</span><em>半价券有效期：2015年6月1日-2015年6月28日，仅限正餐时段（9:30-23:00）使用。</em></p>
+      <p class="clearfix"><span>2</span><em>狂欢盛典花淇淋全国售卖数量377万份，售完即止。当此产品售罄，半价券可适用同类产品。 
+</em></p>
+      <p class="clearfix"><span>3</span><em>在有此产品供应的中国大陆肯德基餐厅使用，交通枢纽、旅游景区的餐厅以及精选餐厅除外。具体情况以餐厅公示为主。
+</em></p>
+      <p class="clearfix"><span>4</span><em>仅限微信卡包中出示使用，截屏、复制、修改无效。 
+</em></p>
+      <p class="clearfix"><span>5</span><em>不适用于肯德基宅急送。 不适用于肯德基甜品站。
+</em></p>
+      <p class="clearfix"><span>6</span><em>请在点餐前出示，产品和包装以餐厅实际供应为准。
+</em></p>
+	  <p class="clearfix"><span>7</span><em>不可兑换现金，且不能与其他优惠同时使用。</em></p>
+	  <p class="clearfix"><span>8</span><em>中国肯德基只认可肯德基官方微信等官方途径发布的本券，您从其他途径获得的将不能在肯德基餐厅使用，请注意下载渠道。</em></p>
+      <p><i>获奖须知：</i></p>
+      <p class="clearfix"><span>1</span><em>实物奖品的领取：请获奖者通过微信消息的方式，在中奖名单公布后2周内，回复我们您的真实姓名、身份证复印件或扫描件、邮寄地址、邮政编码及联系电话，未能按时完整回复者，奖项自动作废。 </em></p>
+      <p class="clearfix"><span>2</span><em>实物奖品将于中奖者提交个人资料后的1个月内通过快递寄出；确认领奖事宜后2个月，如仍未收到奖品，请在一周内向主办方声明，否则逾期不补；奖品个人所得税由主办方代扣代缴。 </em></p>
+      <p class="clearfix"><span>3</span><em>如因中奖者提供个人信息不全或有误（包括真实姓名、身份证号码、邮寄地址、邮政编码及联系电话等），导致奖品无法递送，主办方不为此承担任何责任。 </em></p>
+      <p class="clearfix"><span>4</span><em>手机话费的领取：主办方将根据中奖用户填写的手机号码，在活动结束后1个月内，为该手机号码充入10元手机话费。届时请中奖用户留意查看话费余额。中奖用户请务必按照页面提示正确填写手机号码，如因中奖者提供个人信息不全或有误，导致奖品无法递送，主办方为此不承担任何责任。 </em></p>
+      <p class="clearfix"><span>5</span><em>本活动奖项一经确认不得更换或折换现金，奖品规格外观以实物为准，款式颜色随机发送。 
+</em></p>
+      <p><strong>注：同一微信帐号不可重复获奖。 </strong></p>
+      <p><i>其他：</i></p>
+      <p class="clearfix"><span>1</span><em>本次活动的主办方为百胜餐饮集团中国事业部肯德基品牌（统一简称 “主办方”）。
+</em></p>
+      <p class="clearfix"><span>2</span><em>主办方及其广告公司、网络合作伙伴的员工不可参加此次活动，以示公允。
+</em></p>
+      <p class="clearfix"><span>3</span><em>对于任何通过不正当手段参加活动者，主办方有权在不事先通知的前提下取消其参加活动及得奖资格。</em></p>
+      <p class="clearfix"><span>4</span><em>主办方不对因网络传输原因而导致参加者提交的信息错误承担任何责任。
+</em></p>
+      <p class="clearfix"><span>5</span><em>如遇不可抗力因素，本活动因故无法进行时，主办方在法律允许的范围内有权决定取消、终止、修改或暂停本活动。 </em></p>
+    </div>
+    </div>
+    <div class="arrow_up"></div>
+  </div>
+</div>
+
+<!--抽奖界面-->
+<div id="prizeForm" class="pop draw_pop">
+  <div class="area">
+    <div class="cont">
+   	<h3>爱花淇淋的吃货<br/>就是那么幸运</h3>
+    <p>填写手机号：</p>
+    <p><span>肯德基</span>将会在活动结束后的30个工作日内<br/>为您填写的手机号充值<span>20元话费</span></p>
+    <div class="phone"><span>手机号：</span><input type="text" name="" value="" placeholder=""/></div>
+    <div id="errorTips" style="display:none;" ></div>
+    </div>
+    <div class="submit"></div>
+  </div>
+</div>
+
+<!--抽奖界面1-->
+<div id="prizeTips" class="pop draw_pop">
+  <div class="area">
+    <div class="close"></div>
+    <div class="cont">
+   	<h3>表桑心<br/>肯德基官方微信的粉丝<br/>还有机会<br/>获得<span>Apple Watch</span>哦！</h3>
+    </div>
+  </div>
+</div>
+
+<div class="flyball"></div>
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/j2ckf.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/iscroll.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/sdc_MobWeb.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/apiRemote.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/game.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BMH/scripts/bmh1506/index.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+var sid = sessionStorage.getItem("sid");
+if ( sid == null || sid == "null" || sid == "") {	
+	//alert('to_redirect='+amGloble.config.loginUrl);
+	location.href = amGloble.config.loginUrl;
+}
+$(document).ready(function(){
+	function stopScrolling(touchEvent) { 
+		touchEvent.preventDefault(); 
+	} 
+	document.addEventListener('touchstart', stopScrolling, false); 
+	document.addEventListener('touchmove', stopScrolling, false); 
+}); 
+</script>
+</body>
+</html>

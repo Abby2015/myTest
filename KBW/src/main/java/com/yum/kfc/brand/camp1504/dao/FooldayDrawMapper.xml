@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.camp1504.dao.FooldayDrawMapper">
+
+	<select id="queryDrawTimesByIp" resultType="Long">
+	  SELECT count(*) FROM foolday_draw where ipAddr=#{ipAddr} and #{fromTime}&lt;=drawTime and drawTime&lt;#{toTime}
+    </select>
+    
+	<select id="queryDrawTimesByUser" resultType="Long">
+	  SELECT count(*) FROM foolday_draw
+	   where userId=#{userId} and channelType=#{channelType} and #{fromTime}&lt;=drawTime and drawTime&lt;#{toTime}
+    </select>
+    
+    <select id="queryIsUserWon" resultType="Long">
+		select count(*) from foolday_draw where userId=#{userId} and channelType=#{channelType} and winAward=1
+	</select>
+	
+	<update id="saveWinPhone" parameterType="com.yum.kfc.brand.camp1504.pojo.FooldayDraw">
+	   update foolday_draw set phone=#{phone} where userId=#{userId} and channelType=#{channelType}
+    </update>
+    
+	<select id="isWinNotPhone" resultType="com.yum.kfc.brand.camp1504.pojo.FooldayDraw">
+	   select top 1 userId, phone from foolday_draw where userId=#{userId} and channelType=#{channelType} and winAward=1 order by drawTime desc
+    </select>
+    
+    <insert id="insertWinInfo" parameterType="com.yum.kfc.brand.camp1504.pojo.FooldayDraw">
+    	INSERT INTO foolday_draw
+    		([id],[userId],[openId],[channelType],[deviceType],[winAward],[awardCodeId],[phone],[drawTime],[ipAddr])
+     	VALUES
+     		 (#{id},#{userId},#{openId},#{channelType},#{deviceType},#{winAward},#{awardCodeId},#{phone},#{drawTime},#{ipAddr})
+    </insert>
+    
+    <select id="queryWinPhoneCount" resultType="Long">
+	  	SELECT count(*) FROM foolday_draw where phone=#{phone} and winAward=1
+    </select>
+    
+</mapper>

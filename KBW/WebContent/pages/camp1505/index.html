@@ -1,0 +1,297 @@
+﻿<!doctype html>
+<!-- <html> -->
+<html manifest="motherday.appcache">
+<head>
+<title>带上妈妈来一次久违的旅行</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css" href="http://localhost/brandkfc/styles/camp1505/common.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/brandkfc/styles/camp1505/mother.css"/>
+<script type="text/javascript" src="http://localhost/brandkfc/scripts/camp1505/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="http://localhost/brandkfc/scripts/camp1505/apiRemote.js"></script>
+<script type="text/javascript">
+//进入页面首先进行判断是否存在openid的操作
+/* var openid = localStorage.getItem('openid');
+var token = sessionStorage.getItem('token');
+if ( openid == "null" || openid == null || openid=="" || token == "null" || token == null || token == "" ) {
+	location.href = amGloble.config.selfRoot + "api/camp1505/motherday/login.do";
+} */
+</script>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="main">
+  	<!--page1 start-->
+      <div class="page page-1">
+      	<img alt="" src="http://localhost/brandkfc/images/camp1505/linkPic.jpg" width="0" height="0">
+      	<div class="remember_img"><img src="http://localhost/brandkfc/images/camp1505/page0-p.png" alt="记忆" class="fullPic"/></div>
+        <div class="bottom_page">
+	        <div class="remember_button" id="button_next">
+	        	<div class="arrow-left"></div>
+	        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/page0-p1.png" alt="开启记忆" class="fullPic"/></div>
+	            <div class="arrow-right"></div>
+	        </div>
+	        <div class="active_rule"><img src="http://localhost/brandkfc/images/camp1505/page0-p2.png" alt="活动细则" class="fullPic"/></div>
+      	</div>
+      </div>
+      <!--page1 end-->
+      
+      <div id="fullpage" class="fullpage none">
+      <!--page2 start-->
+      <div class="page page-2 section" id="section2">
+        <div class="history1"><img src="http://localhost/brandkfc/images/camp1505/pic-1.png" alt="" class="fullPic"/></div>
+      	<div class="bottom_arrow">
+            <div class="bottom-icon"><img src="http://localhost/brandkfc/images/camp1505/arrow-up.png" alt="向上滑动继续" class="fullPic"/></div>
+        </div>
+      </div>
+      <!--page2 end-->
+      <!--page3 start-->
+      <div class="page page-3 section" id="section3">
+        <div class="history2"><img src="http://localhost/brandkfc/images/camp1505/pic-2.png" alt="" class="fullPic"/></div>
+      	<div class="bottom_arrow">
+            <div class="bottom-icon"><img src="http://localhost/brandkfc/images/camp1505/arrow-up.png" alt="向上滑动继续" class="fullPic"/></div>
+        </div>
+      </div>
+      <!--page3 end-->
+      <!--page4 start-->
+      <div class="page page-4 section" id="section4">
+      	<div class="history3"><img src="http://localhost/brandkfc/images/camp1505/pic-3.png" alt="" class="fullPic"/></div>
+      	<div class="bottom_arrow">
+            <div class="bottom-icon"><img src="http://localhost/brandkfc/images/camp1505/arrow-up.png" alt="向上滑动继续" class="fullPic"/></div>
+        </div>
+      </div>
+      <!--page4 end-->
+      <!--page5 start-->
+      <div class="page page-5 section" id="section5">
+      	<div class="history4"><img src="http://localhost/brandkfc/images/camp1505/pic-4.png" alt="" class="fullPic"/></div>
+      	<div class="bottom_arrow">
+            <div class="bottom-icon"><img src="http://localhost/brandkfc/images/camp1505/arrow-up.png" alt="向上滑动继续" class="fullPic"/></div>
+        </div>
+      </div>
+      <!--page5 end-->
+      <!--page5 start-->
+      <div class="page page-5-2 section" id="section5-2">
+      <div class="logo"></div>
+      <div class="img-5"><img src="http://localhost/brandkfc/images/camp1505/page5-p.png" alt="" class="fullPic"/></div>
+      	<div class="bottom_arrow">
+            <div class="bottom-icon"><img src="http://localhost/brandkfc/images/camp1505/arrow-up.png" alt="向上滑动继续" class="fullPic"/></div>
+        </div>
+      </div>
+      <!--page5 end-->
+      <!--page6 start-->
+      <div class="page page-6 section" id="section6">
+      	<div class="logo"></div>
+      	<div class="clearfix">
+      	<div class="yang"><img src="http://localhost/brandkfc/images/camp1505/page6-p.png" alt="这个母亲节带妈妈去尝新吧" class="fullPic"/></div>
+      	</div>
+      	<div class="click_select">
+      		<div class="clickbtn">
+      			<p>带上妈妈来一次久违的旅行</p>
+      			<span class="triangle"></span>
+      		</div>
+      		<textarea class="textarea" maxlength="20" placeholder="我有更好的尝新主意(请输入)"></textarea>
+      		<div class="selectarea" style="display:none;">
+      			<div class="cont">
+	      			<ul>
+	      				<li>带上妈妈来一次久违的旅行</li>
+	      				<li>和妈妈看一场最新的热门电影</li>
+	      				<li>带妈妈吃一顿浪漫的西式大餐</li>
+	      				<li>为妈妈拍一组很青春的写真照</li>
+	      				<li>教妈妈用最新的大屏智能手机</li>
+	      			</ul>
+      			</div>
+      		</div>
+      		<div class="remember_button" id="button_share">
+      			<div class="arrow-left"></div>
+	        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/page6-p1.png" alt="带妈妈尝新" class="fullPic"/></div>
+	            <div class="arrow-right"></div>
+	        </div>
+      	</div>
+      </div>
+      <!--page6 end-->
+    </div>
+      
+      <!--page7 start-->
+      <div class="page page-7 none">
+      	<div class="logo"></div>
+      	<div class="submit_div">
+      		<div class="submit_img"><img src="http://localhost/brandkfc/images/camp1505/page8-p.png" alt="" class="fullPic"/></div>
+            <h4 id="prize">xxxxxx</h4>
+            <p>留下联系方式让奖品快点找到你！</p>
+            <div class="formtable">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            	<tr>
+                	<th>您的姓名</th>
+                    <td><input type="text" name="name" class="name" placeholder="请输入中文姓名" id="userName" maxlength="6"/></td>
+                </tr>
+                <tr>
+                	<th>联系电话</th>
+                    <td><input type="text" name="tel" class="tel" placeholder="请输入移动电话" id="userPhone" maxlength="11"/></td>
+                </tr>
+                <tr>
+                	<th>身份证号</th>
+                    <td><input type="text" name="yid" class="yid" placeholder="请输入正确的身份证号码" id="userID" maxlength="18"/></td>
+                </tr>
+                <tr>
+                	<th>邮寄地址</th>
+                    <td><input type="text" name="address" class="address" placeholder="请输入详细地址" id="userAddress" maxlength="100"/></td>
+                </tr>
+                <tr>
+                	<th>邮政编码</th>
+                    <td><input type="text" name="code" class="code" placeholder="请输入具体邮编" id="userAddressCode" maxlength="6"/></td>
+                </tr>
+            </table>
+            </div>
+      	</div>
+        <div id="idInfo" style="display:none">您输入的证件号不是15或18位</div>
+        <div class="remember_button" id="button_info">
+            <div class="arrow-left"></div>
+        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/page8-p1.png" alt="提交" class="fullPic"/></div>
+            <div class="arrow-right"></div>    
+        </div>
+      </div>
+      <!--page7 end-->
+      <!--page8 start-->
+      <div class="page page-8 none">
+      	<div class="logo"></div>
+      	<div class="submit_div_success">
+      		<img src="http://localhost/brandkfc/images/camp1505/page8-p2.png" alt="提交成功" class="fullPic"/>          
+      	</div>
+        <div class="remember_button again" >
+            <div class="arrow-left"></div>
+        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/back.png" alt="提交" class="fullPic"/></div>
+            <div class="arrow-right"></div>    
+        </div>
+      </div>
+      <!--page8 end-->
+      <!--page9 start-->
+      <div class="page page-9 none">
+      	<div class="logo"></div>
+      	<div class="everyone">
+      	  <div class="quan_p"><img src="http://localhost/brandkfc/images/camp1505/page9-p.png" alt="" class="fullPic"/></div>
+          <div class="quan"><img src="http://localhost/brandkfc/images/camp1505/quan.jpg" alt=""/></div>
+		  <div class="long clearfix"><span>长按图片保存优惠券</span></div>
+      	</div>
+        <div class="remember_button again">
+            <div class="arrow-left"></div>
+        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/back.png" alt="返回" class="fullPic"/></div>
+            <div class="arrow-right"></div> 
+        </div>
+      </div>
+      <!--page9 end-->
+      <!--page10 start-->
+      <div class="page page-10 none">
+      	<div class="tab_container">
+        	<ul class="tab">
+                <li class="cur">活动细则</li>
+                <li>幸运网友</li>
+            </ul>
+            <div class="tabCont tabCont1" >
+            	<p>活动时间：</p>
+2015年5月8日—2015年5月10日
+<p>参与方式：</p>
+1、活动期间，关注肯德基官网微信，进入“带妈妈去尝新”互动活动主页参与互动。<br/>
+2、在活动页面内选择或写出你的尝新计划，并分享给小伙伴。<br/>
+3、分享成功后即可获得以下一份爱的鼓励（随机发放）： <br/>
+<ul><li class="clearfix"><em>•</em><p>iPad Air 1台，价值2888元，共1台</p></li>
+<li class="clearfix"><em>•</em><p>携程旅游券1张，价值1000元，共10张</p></li>
+<li class="clearfix"><em>•</em><p>格瓦拉电影兑换券一张，价值100元，共100张</p></li>
+<li class="clearfix"><em>•</em><p>肯德基新品优惠券一张</p></li></ul>
+<p>领奖须知：</p> 
+<ul><li class="clearfix"><em>•</em><p>实物奖品将于中奖者提交个人资料后的1个月内通过快递寄出；确认领奖事宜后2个月，如仍未收到奖品，请在一周内向主办方声明，否则逾期不补；奖品个人所得税由主办方代扣代缴。</p></li>
+<li class="clearfix"><em>•</em><p>如因中奖者提供个人信息不全或有误（包括真实姓名、身份证号码、邮寄地址、邮政编码及联系电话等），导致奖品无法递送，主办方不为此承担任何责任。</p></li>
+<li class="clearfix"><em>•</em><p>本活动奖项一经确认不得更换或折换现金，奖品规格外观以实物为准，款式颜色随机发送。 </p></li></ul>
+ 注：同一微信帐号不可重复获奖。<br/>
+<p>其他：</p>
+ 本次活动的主办方为百胜餐饮集团中国事业部肯德基品牌（简称“主办方”）。</li>
+<ul><li class="clearfix"><em>•</em><p>主办方及其广告公司、网络合作伙伴的员工不可参与此次活动，以示公允。</p></li>
+<li class="clearfix"><em>•</em><p>对于任何通过不正当手段参加活动者，主办方有权在不事先通知的前提下取消其参加活动及获奖资格。</p></li>
+<li class="clearfix"><em>•</em><p>主办方不对因网络传输原因而导致参加者提交的信息错误承担任何责任。</p></li>
+<li class="clearfix"><em>•</em><p>如遇不可抗力因素，本活动因故无法进行时，主办方在法律允许的范围内有权决定取消、终止、修改或暂停本活动。</p></li></ul>
+            	
+            </div>
+            <div class="tabCont tabCont2" style="display:none;">
+            	<ul class="contarea">
+                    <li style="text-align: center; height: 100%;display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center;display: box;
+box-pack: center;box-align: center;box-orient: vertical;-webkit-box-orient: vertical; box-orient: vertical;">敬请期待!</li>
+                   	<!-- <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li>
+                    <li>LIlei 获得XXXXXX奖品&nbsp;&nbsp;1份</li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="remember_button return">
+            <div class="arrow-left"></div>
+        	<div class="pimg"><img src="http://localhost/brandkfc/images/camp1505/back.png" alt="返回" class="fullPic"/></div>
+            <div class="arrow-right"></div>  
+        </div>
+      </div>
+      <!--page10 end-->
+      
+    <!-- share overlay -->
+    <div class="share-pop"></div>
+    <div class="music music-move" id="music"></div>
+    <audio src="http://localhost/brandkfc/audio/camp1505/audio.mp3" loop="loop" id="myaudio" autoplay="autoplay" style="display:none;"></audio>
+    <input id="iosAutoPlay" type="button" style="display:none" value="iosAutoPlay">
+  </div>
+</div>
+<div class="pop">
+		<div class="coupons_popUpBox">
+			<div class="close_popimg"></div>
+			<div class="popUpBoxImg"><img src="http://localhost/brandkfc/images/f1.jpg" alt=""></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="http://localhost/brandkfc/scripts/camp1505/pageSwitch.js"></script>
+<script type="text/javascript" src="http://localhost/brandkfc/scripts/camp1505/sdc_MobWeb.js"></script>
+<script type="text/javascript" src="http://localhost/brandkfc/scripts/camp1505/index.js"></script>
+<script type="text/javascript">
+function touches(ev) {
+    if (ev.touches.length == 1) {
+        var oDiv = document.getElementById('myaudio');
+        switch (ev.type) {
+            case 'touchstart':
+                document.getElementById('myaudio').play();
+                document.removeEventListener('touchstart', touches, false);
+                break;
+        }
+    }
+}
+document.addEventListener('touchstart', touches, false);
+
+$(function(){
+	// Check if a new cache is available on page load.
+	window.addEventListener('load', function(e) {
+	  window.applicationCache.addEventListener('updateready', function(e) {
+	    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+	      // Browser downloaded a new app cache.
+	      // Swap it in and reload the page to get the new hotness.
+	      window.applicationCache.swapCache();
+	        window.location.reload();
+	    } else {
+	      // Manifest didn't changed. Nothing new to server.
+	    }
+	  }, false);
+
+	}, false);
+});
+</script>
+</html>

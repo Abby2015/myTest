@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.camp1505.dao.Camp1505DrawMapper">
+
+	<select id="queryDrawTimesByIp" resultType="Long">
+	  SELECT count(*) FROM camp1505_draw where ipAddr=#{ipAddr} and drawTime between #{fromTime} and #{toTime}
+    </select>
+    
+	<select id="queryDrawTimesByUser" resultType="Long">
+	  SELECT count(*) FROM camp1505_draw
+	   where userId=#{userId} and channelType=#{channelType} and drawTime between #{fromTime} and #{toTime}
+    </select>
+    
+    <select id="queryIsUserWon" resultType="Long">
+		select count(*) from camp1505_draw where userId=#{userId} and channelType=#{channelType} and winAward=1
+	</select>
+	
+	<update id="saveWinAward" parameterType="com.yum.kfc.brand.camp1505.pojo.Camp1505Draw">
+	   update camp1505_draw set name=#{name}, phone=#{phone}, identityNum=#{identityNum}, address=#{address}, postCode=#{postCode}
+	    where userId=#{userId} and channelType=#{channelType} and winAward=1 
+    </update>
+    
+    <insert id="insertDraw" parameterType="com.yum.kfc.brand.camp1505.pojo.Camp1505Draw">
+    	INSERT INTO camp1505_draw
+    		([id],[userId],[openId],[channelType],[deviceType],[winAward],[awardType],[awardCodeId],[ipAddr],[drawTime])
+     	VALUES
+     		 (#{id},#{userId},#{openId},#{channelType},#{deviceType},#{winAward},#{awardType},#{awardCodeId},#{ipAddr},#{drawTime})
+    </insert>
+    
+    <select id="queryWinAwardPersons" resultType="String">
+	  	SELECT name FROM camp1505_draw where winAward=1 order by drawTime
+    </select>
+    
+</mapper>

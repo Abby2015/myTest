@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>爆米花爱上花淇淋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link href="http://t.a.kfc.com.cn/brandkfc2/styles/bmh1506/common.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://t.a.kfc.com.cn/brandkfc2/styles/bmh1506/popcorn.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="am-app">
+<!--首页 start-->
+<div class="am-page page1" >
+  <div class="am-body-wrap">
+    <div class="am-body-inner">
+      <ul class="button">
+        <li class="ticket_button"><span>我的半价券</span></li>
+        <li class="know_button"><span>了解产品</span></li>
+        <li class="rule_button"><span>活动规则</span></li>
+      </ul>
+      <div class="home_popcorn">
+        <div class="popcorn_p"><img src="http://t.a.kfc.com.cn/brandkfc2/images/bmh1506/page1.png" alt=""/></div>
+        <div class="start_button"> <span class="heart"><span class="heart1"><span class="heart2"></span></span></span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--首页 end--> 
+
+<!--蒙层背景 end-->
+<div class="overlay" style="display:block"></div>
+
+<!--抽奖界面-->
+<div id="prizeForm" class="pop draw_pop" style="display:block">
+  <div class="area">
+    <div class="cont">
+   	<h3>爱花淇淋的吃货<br/>就是那么幸运</h3>
+    <p>填写手机号：</p>
+    <p><span>肯德基</span>将会在活动结束后的30个工作日内<br/>为您填写的手机号充值<span>20元话费</span></p>
+    <div class="phone"><span>手机号：</span><input type="text" name="" value="" placeholder=""/></div>
+    <div id="errorTips" style="display:none;" ></div>
+    </div>
+    <div class="submit"></div>
+  </div>
+</div>
+
+
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+<script src="http://t.a.kfc.com.cn/brandkfc2/scripts/bmh1506/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="http://t.a.kfc.com.cn/brandkfc2/scripts/bmh1506/apiRemote.min.js" type="text/javascript"></script>
+<script src="http://t.a.kfc.com.cn/brandkfc2/scripts/bmh1506/index_tel.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	function stopScrolling(touchEvent) { 
+		touchEvent.preventDefault(); 
+	} 
+	document.addEventListener('touchstart', stopScrolling, false); 
+	document.addEventListener('touchmove', stopScrolling, false); 
+}); 
+</script>
+</body>
+</html>

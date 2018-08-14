@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="kfc-brand-activity" metadata-complete="true" version="3.0">
+  <display-name>KFC-BRAND-ACTIVITY</display-name>
+	<welcome-file-list>
+		<welcome-file>/pages/index.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+    	<param-value>classpath:/springConfig/applicationContext.xml,
+					 classpath:/springConfig/applicationContext-exception.xml,
+					 classpath:/springConfig/applicationContext-cxf.xml,
+					 classpath:/springConfig/applicationContext-task.xml
+					 </param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<listener>
+    	<listener-class>com.yum.kfc.brand.common.web.listener.RabbitMQConsumerServletContextListener</listener-class>
+  	</listener>
+    <listener>
+  		<listener-class>com.yum.kfc.brand.common.web.listener.LogbackConfigFilePathServletContextListener</listener-class>
+  	</listener>
+  	
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<!-- <url-pattern>/rest/*</url-pattern> -->
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>book1712Servlet</servlet-name>
+		<servlet-class>com.yum.kfc.brand.book1712.api.Book1712ApiServlet</servlet-class>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>book1712Servlet</servlet-name>
+		<url-pattern>/api/book/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ====================KBM(KFC Brand Member) begin======================== -->
+	<servlet><servlet-name>cspServlet</servlet-name><servlet-class>com.yum.kfc.brand.kbm.api.CSPApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>cspServlet</servlet-name><url-pattern>/api/csp/*</url-pattern></servlet-mapping>
+	
+	<servlet><servlet-name>kbmOrderServlet</servlet-name><servlet-class>com.yum.kfc.brand.kbm.api.OrderApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>kbmOrderServlet</servlet-name><url-pattern>/api/order/*</url-pattern></servlet-mapping>
+	
+	<servlet><servlet-name>mpsServlet</servlet-name><servlet-class>com.yum.kfc.brand.kbm.api.MpsApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>mpsServlet</servlet-name><url-pattern>/api/mps/*</url-pattern></servlet-mapping>
+	
+	<servlet><servlet-name>aiServlet</servlet-name><servlet-class>com.yum.kfc.brand.kbm.api.AIApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>aiServlet</servlet-name><url-pattern>/api/ai/*</url-pattern></servlet-mapping>
+	
+	<servlet><servlet-name>bigCake1806Servlet</servlet-name><servlet-class>com.yum.kfc.brand.bigcake1806.api.BigCake1806ApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>bigCake1806Servlet</servlet-name><url-pattern>/api/bigcake/*</url-pattern></servlet-mapping>
+	
+	<servlet><servlet-name>dzp1711Servlet</servlet-name><servlet-class>com.yum.kfc.brand.dzp1711.api.Dzp1711ApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>dzp1711Servlet</servlet-name><url-pattern>/api/dzp1711/*</url-pattern></servlet-mapping>
+	
+	<!--servlet><servlet-name>madServlet</servlet-name><servlet-class>com.yum.kfc.brand.kbm.api.MadApiServlet</servlet-class><async-supported>true</async-supported></servlet>
+	<servlet-mapping><servlet-name>madServlet</servlet-name><url-pattern>/api/mad/*</url-pattern></servlet-mapping-->
+	<!-- ====================KBM end======================== -->
+	
+</web-app>

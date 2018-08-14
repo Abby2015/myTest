@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+			">
+<!--
+ 	<task:scheduler id="springTaskScheduler" pool-size="10" />
+	
+	<task:scheduled-tasks scheduler="springTaskScheduler">
+		<task:scheduled ref="tickerTaskA" method="run" fixed-delay="5000" initial-delay="1000" />
+		<task:scheduled ref="tickerTaskB" method="run" fixed-rate="3000" />
+		<task:scheduled ref="tickerTaskC" method="run" cron="*/6 * * * * MON-FRI" />
+	</task:scheduled-tasks>
+	
+	<bean name="tickerTaskA" class="com.hp.dwm.jdf.task.TickerTimerTask"><property name="name" value="A"/></bean>
+	<bean name="tickerTaskB" class="com.hp.dwm.jdf.task.TickerTimerTask"><property name="name" value="B"/></bean>
+	<bean name="tickerTaskC" class="com.hp.dwm.jdf.task.TickerTimerTask"><property name="name" value="C"/></bean>
+ -->
+  	<!--task:scheduler id="springTaskScheduler" pool-size="1" /-->
+	
+	<!-- org.springframework.scheduling.support.CronSequenceGenerator http://www.manpagez.com/man/5/crontab/ -->
+	<!--task:scheduled-tasks scheduler="springTaskScheduler"-->
+		<!--task:scheduled ref="syncStoreTask" method="run" fixed-delay="28800000" initial-delay="10000" /-->
+		<!-- The pattern is a list of six single space-separated fields: representing
+				 second, minute, hour, day, month, weekday. 
+			Month and weekday names can be given as the first three letters of the English names.  
+			"0 0/30 8-10 * * *" = 8:00, 8:30, 9:00, 9:30 and 10 o'clock every day. -->
+		<!--task:scheduled ref="syncStoreTask" method="run" cron="0 0 4 * * *" />
+	</task:scheduled-tasks-->
+	
+</beans>

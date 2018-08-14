@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.bnbjc1508.dao.Bnbjc1508CouponMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.bnbjc1508.pojo.Bnbjc1508Coupon">
+		INSERT INTO bnbjc1508_coupon
+			([id],[openId],[userId],[channelType],[deviceType],[inviterId],[inviteChannelType],[isPutCardBag],[promoCode],[couponTime])
+		VALUES
+			(#{id},#{openId},#{userId},#{channelType},#{deviceType},#{inviterId},#{inviteChannelType},#{isPutCardBag},#{promoCode},#{couponTime})
+	</insert>
+	
+	<select id="getTodayCoupon" resultType="String">
+		select top 1 promoCode from bnbjc1508_coupon with(nolock) where userId=#{userId} 
+		and channelType=#{channelType} and couponTime between #{fromTime} and #{toTime}
+	</select>
+	
+	<select id="isDrawCoupon" resultType="int">
+		select count(*) from bnbjc1508_coupon with(nolock) where inviterId=#{userId} and userId!=#{userId}
+		and inviteChannelType=#{channelType} and couponTime between #{fromTime} and #{toTime}
+	</select>
+	
+	<select id="getLastCoupon" resultType="String">
+		select top 1 promoCode from bnbjc1508_coupon with(nolock) where userId=#{userId} and channelType=#{channelType} order by couponTime desc
+	</select>
+</mapper>

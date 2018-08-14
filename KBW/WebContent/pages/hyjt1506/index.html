@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>眼神要如此犀利，才能轻轻松松享半价！</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/apiRemote.js" type="text/javascript"></script>
+<script type="text/javascript">
+var UA = navigator.userAgent;
+var channelType = "", deviceType = "";
+if(UA.indexOf("iPhone")!= -1 || UA.indexOf("iPad")!=-1){
+	deviceType = "1";
+}else if(UA.indexOf("Android")!= -1){
+	deviceType = "0";
+}else{
+	deviceType = "2";
+}
+if(UA.indexOf("MicroMessenger")!= -1){
+	channelType = "1";
+}else{
+	if(deviceType == "1" || deviceType == "0"){
+		channelType = "0";
+	}else{
+		channelType = "2";
+	}
+}
+if(channelType!="1"){
+	if(deviceType == "1" || deviceType == "0"){
+		location.href = amGloble.config.selfRef + "pages/hyjt1506/mobile.html";
+	}else{
+		location.href = amGloble.config.selfRef + "pages/hyjt1506/web.html";
+	}
+}
+
+
+var tag = amGloble.getQueryParameter("tag");
+var normalShare = amGloble.getQueryParameter("normalShare");
+var refresh_flag = amGloble.getQueryParameter("refresh_flag");
+var share_type = amGloble.getQueryParameter("share_type");
+sessionStorage.setItem("tag", tag);
+sessionStorage.setItem("normalShare", normalShare);
+sessionStorage.setItem("refresh_flag", refresh_flag);
+sessionStorage.setItem("share_type", share_type);
+var sid = sessionStorage.getItem("sid");
+if ( sid == null || sid == "null" || sid == "") {
+	location.href = amGloble.config.selfRoot + "api/hyjt1506/login.do";
+}
+</script>
+
+<link href="http://summer.kfc.com.cn/HYJT/styles/hyjt1506/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://summer.kfc.com.cn/HYJT/styles/hyjt1506/icecream.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="loading"></div>
+<div style="width:0px;height:0px">
+<img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/linkPic.jpg" alt="分享图标" width="0" height="0"/>
+</div>
+<div class="wrap">
+  <div class="main">
+    <!--page1 start-->
+    <div class="page page1">
+      <div class="button">
+      	<div class="ticket_button mobile_button" style="display:none;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/mobile_button.png" alt="mobile" class="fullimg"/></div>
+        <div class="ticket_button light1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button.png" alt="我的花淇淋" class="fullimg"/></div>
+        <div class="ticket_button gray" style="display:none;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button_gray.png" alt="我的花淇淋" class="fullimg"/></div>
+        <div class="rule_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/rule_button.png" alt="活动规则" class="fullimg"/></div>
+        <div class="about_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/about_button.png" alt="了解产品" class="fullimg"/></div>
+      </div>
+      <div class="area">
+        <div class="page1_p"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page1_p.png" alt="花淇淋去哪儿了" class="fullimg"/></div>
+        <div class="start_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/start_button.png" alt="立刻寻找" class="fullimg"/></div>
+        <div class="icecream pro"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page1_ice_crream.png" alt="海盐焦糖风味花淇淋" class="fullimg"/></div>
+      </div>
+    </div>
+    <!--page1 end--> 
+    
+    <!--page2 start-->
+    <div class="page page2">
+      <div class="area">
+        <div class="page2_p"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page2_p.png" alt="追踪花淇淋" class="fullimg"/></div>
+        <div class="icecream"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ice_cream.png" alt="" class="fullimg"/></div>
+      </div>
+    </div>
+    <!--page2 end--> 
+    
+    <!--page2-2 game start-->
+    <div class="page bgk_page2 page2-2">
+      <div class="area">
+        <div class="page2_p1" style="opacity: 0;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page2_p1.png" alt="花淇淋到底去哪儿了" class="fullimg"/></div>
+        <div class="contain seeyou">
+          <!-- <div class="hand"><div id="handmove"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/hand.png" alt="" class="fullimg"/></div></div> -->
+          <div class="content rotate">
+          	<div class="barrel_left pic1 realImg"><div class="pic1-1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/tea.png" alt="茶" class="fullimg"/></div></div>
+            <div class="barrel_right pic2 realImg"><div class="pic2-2"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ice.png" alt="冰激凌" class="fullimg"/></div></div>
+            <div class="barrel_bottom pic3 realImg"><div class="pic3-3"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/icecream.png" alt="花淇淋" class="fullimg"/></div></div>
+            <div class="tong tong1 " style="display:none"><div class="tong1-1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/barrel.png" alt="桶茶" class="fullimg"/></div></div>
+            <div class="tong tong2 " style="display:none"><div class="tong1-1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/barrel.png" alt="桶冰激凌" class="fullimg"/></div></div>
+            <div class="tong tong3 " style="display:none"><div class="tong1-1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/barrel.png" alt="桶花淇淋" class="fullimg"/></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--page2-2 end--> 
+    
+    <!--page3 猜中页面 start-->
+    <div class="page page3">
+      <div class="button">
+        <div class="ticket_button light2"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button.png" alt="我的花淇淋" class="fullimg"/></div>
+        <div class="ticket_button gray" style="display:none;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button_gray.png" alt="我的花淇淋" class="fullimg"/></div>
+      </div>
+      <div class="area">
+        <div class="page3_p"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page3_p.png" alt="半价券归你啦" class="fullimg"/></div>
+        <div class="page3_img"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page3_img.png" alt="花淇淋" class="fullimg"/></div>
+        <ul class="button">
+          <li class="show_button success"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/show_button.png" alt="" class="fullimg"/></li>
+          <li class="refresh_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/refresh_button.png" alt="" class="fullimg"/></li>
+        </ul>
+      </div>
+    </div>
+    <!--page3 end--> 
+    
+    <!--page4 猜错 start-->
+    <div class="page page4">
+      <div class="button">
+        <div class="ticket_button light3"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button.png" alt="我的花淇淋" class="fullimg"/></div>
+        <div class="ticket_button gray" style="display:none;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket_button_gray.png" alt="我的花淇淋" class="fullimg"/></div>
+      </div>
+      <div class="area">
+        <div class="page3_p"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page4_p.png" alt="半价券归你啦" class="fullimg"/></div>
+        <div class="page3_img"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/page4_img.png" alt="花淇淋" class="fullimg"/></div>
+        <ul class="button">
+          <li class="show_button fail"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/show_button.png" alt="" class="fullimg"/></li>
+          <li class="refresh_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/refresh_button.png" alt="" class="fullimg"/></li>
+        </ul>
+      </div>
+    </div>
+    <!--page4 end--> 
+    
+    <!--page5 卡包 start-->
+    <div class="page page5">
+      <div class="area">
+        <div class="ticket"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ticket.png" alt="花淇淋" class="fullimg"/></div>
+        <ul class="button">
+          <li class="save_button"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/look_button.png" alt="点击保存至微信卡包" class="fullimg"/></li>
+          <li class="close_button clo1"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/close_p.png" alt="关闭" class="fullimg"/></li>
+          <li class="close_button clo2" style="display:none"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/close_p.png" alt="关闭" class="fullimg"/></li>
+          <li class="close_button clo3" style="display:none"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/close_p.png" alt="关闭" class="fullimg"/></li>
+        </ul>
+      </div>
+    </div>
+    <!--page5 end--> 
+    
+    <!--page6 产品介绍 start-->
+    <div class="page page6">
+      <div class="area">
+        <div class="desc"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/desc.png" alt="" class="fullimg"/></div>
+        <div class="ice"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ice_cream.png" alt="花淇淋" class="fullimg"/></div>
+        <div class="back"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/back.png" alt="返回" class="fullimg"/></div>
+      </div>
+    </div>
+    <!--page6 end-->
+    
+    <!--page7 产品结束 start-->
+    <div class="page page7">
+      <div class="area">
+        <div class="desc"style="width:90%;margin:10px auto;"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/finish.png" alt="" class="fullimg"/></div>
+        <div class="ice"><img src="http://summer.kfc.com.cn/HYJT/images/hyjt1506/ice_cream.png" alt="花淇淋" class="fullimg"/></div>
+      </div>
+    </div>
+    <!--page7 产品结束 end--> 
+    
+  </div>
+</div>
+<!--footer logo-->
+<footer class="footer"></footer>
+<div class="overlay"></div>
+<!--分享成功-->
+<div class="success_pop"></div>
+<!-- 活动结束 -->
+<div class="finish_pop"></div>
+<!--分享失败-->
+<div class="fail_pop"></div>
+<!--抽奖成功-->
+<div class="draw_pop tel">
+  <!-- <div class="closeBtn"></div> -->	
+  <div class="box">
+    <div class="cont">
+      <h3>话费去哪儿了？<br>
+        话费在这里！</h3>
+      <p>恭喜您获得了<span>20元手机话费！</span></p>  
+      <p>填写手机号。</p>
+      <p><span>肯德基</span>将会在活动结束后的一个月内<br>
+        为您填写的手机号充值<span>20元话费</span></p>
+      <div class="phone"><span style="color:#6d4530">手机号：</span>
+        <input id="mobile" type="text" name="" value="" placeholder="请输入正确的手机号" >
+        <div id="tips" style="display:none">手机号码不能为空</div>
+      </div>
+    </div>
+    <div class="submit"></div>
+  </div>
+</div>
+
+<div class="draw_pop Instagram">
+  <div class="box">
+    <div class="closeBtn"></div>
+    <div class="cont">
+   	<h3>表桑心<br>肯德基官方微信的粉丝<br>还有机会<br>获得<span>Instagram实体相机</span>哦！</h3>
+    </div>
+  </div>
+</div>
+
+<div class="pop submit_pop">
+  <div class="box">
+    <div class="closeBtn"></div>
+    <div class="cont">
+   	<h3>手机号码提交成功！</h3>
+    </div>
+  </div>
+</div>
+
+<!--规则-->
+<div class="rule_pop">
+  <div class="close_icon"></div>
+  <div  class="rule_areas">
+    <div id="wrapper" class="rule_cont"> 
+      <div id="scroller">
+      <span>活动时间：</span>2015年7月13日－2015年7月25日<br/>
+      <span>参与方式：</span><br/>
+      1、关注肯德基官方微信，访问“圣代去哪儿了？”活动页面，根据提示参与互动，互动结束后即可得到“海盐焦糖风味圣代”半价券一张，每个用户每天限得一张。<br/>
+      2、所有的游戏参与者分享后即可参与抽奖，奖品包括<br/>
+      1）Instgram实体相机（宝丽莱 Socialmatic）一台，共1台，价值约2000人民币，在活动结束后的7月30日随机抽取，8月7日获奖名单公布在肯德基官方微信；<br/>
+      2）20元手机话费一份，每天100份，共1300份，中奖结果分享后即刻公布，请获奖用户正确填写手机号，以便我们为您充值。<br/>
+      <span style="color:#19a2d8">海盐焦糖风味圣代半价券说明：</span><br/>
+      <span style="color:#f00;">请在餐厅现场收银员的指导下点击确认使用</span><br/>
+      1）半价券有效期：2015年7月13日-2015年7月26日，仅限正餐时段（9:30-23:00）使用。<br/>
+      2）海盐焦糖风味圣代全国售卖数量651万份，售完即止。如此产品售罄，半价券可适用于同类产品。<br/>
+      3）本券仅限在有此产品供应的中国大陆肯德基餐厅使用，交通枢纽、旅游景区的餐厅以及精选餐厅除外。具体情况以餐厅公示为准。<br/>
+      4）仅限微信卡包中出示使用，截屏、复制、修改无效。<br/>
+      5）不适用于肯德基宅急送。 不适用于肯德基甜品站。<br/>
+      6）请在点餐前出示，产品和包装以餐厅实际供应为准。<br/>
+      7）不可兑换现金，且不能与其他优惠同时使用。<br/>
+      8）中国肯德基只认可肯德基官方微信等官方途径发布的本券，您从其他途径获得的将不能在肯德基餐厅使用，请注意下载渠道。<br/>
+      <span>获奖须知：</span><br/>
+      1、实物奖品的领取：请获奖者通过微信消息的方式，在中奖名单公布后2周内，回复我们您的真实姓名、身份证复印件或扫描件、邮寄地址、邮政编码及联系电话，未能按时完整回复者，奖项自动作废。<br/>
+      2、实物奖品将于中奖者提交个人资料后的1个月内通过快递寄出；确认领奖事宜后2个月，如仍未收到奖品，请在一周内向主办方声明，否则逾期不补；奖品个人所得税由主办方代扣代缴。<br/>
+      3、如因中奖者提供个人信息不全或有误（包括真实姓名、身份证号码、邮寄地址、邮政编码及联系电话等），导致奖品无法递送，主办方不为此承担任何责任。<br/>
+      4、手机话费的领取：主办方将根据中奖用户填写的手机号码，在活动结束后1个月内，为该手机号码充入20元手机话费。届时请中奖用户留意查看话费余额。中奖用户请务必按照页面提示正确填写手机号码，如因中奖者提供个人信息不全或有误，导致奖品无法递送，主办方为此不承担任何责任。<br/>
+      5、本活动奖项一经确认不得更换或折换现金。<br/>
+      6、注：同一微信帐号不可重复获奖。<br/>
+      <span>其他：</span><br/>
+      1、本次活动的主办方为百胜餐饮集团中国事业部肯德基品牌（统一简称 “主办方”）。<br/>
+      2、主办方及其广告公司、网络合作伙伴的员工不可参加此次活动，以示公允。<br/>
+      3、对于任何通过不正当手段参加活动者，主办方有权在不事先通知的前提下取消其参加活动及得奖资格。<br/>
+      4、主办方不对因网络传输原因而导致参加者提交的信息错误承担任何责任。<br/>
+      5、如遇不可抗力因素，本活动因故无法进行时，主办方在法律允许的范围内有权决定取消、终止、修改或暂停本活动。<br/>
+    </div>
+   </div>
+  </div>
+</div>
+
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/iscroll.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/sdc_MobWeb.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/jsticketapi-1.1.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/HYJT/scripts/hyjt1506/index.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	function stopScrolling(touchEvent) { 
+		touchEvent.preventDefault(); 
+	} 
+	document.addEventListener('touchstart', stopScrolling, false); 
+	document.addEventListener('touchmove', stopScrolling, false); 
+});
+</script>
+</body>
+</html>

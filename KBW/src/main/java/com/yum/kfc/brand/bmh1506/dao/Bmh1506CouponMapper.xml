@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.bmh1506.dao.Bmh1506CouponMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.bmh1506.pojo.Bmh1506Coupon">
+		INSERT INTO bmh1506_coupon
+			([id],[openId],[userId],[channelType],[deviceType],[isUsed],[promoCode],[couponTime])
+		VALUES
+			(#{id},#{openId},#{userId},#{channelType},#{deviceType},#{isUsed},#{promoCode},#{couponTime})
+	</insert>
+	
+	<select id="getValidCount" resultType="String">
+		select top 1 promoCode from bmh1506_coupon where userId=#{userId} 
+		and channelType=#{channelType} and couponTime between #{fromTime} and #{toTime}
+	</select>
+	
+	
+	<select id="getAllCoupons" resultType="String">
+		select promoCode from bmh1506_coupon where userId=#{userId} and channelType=#{channelType} order by couponTime desc
+	</select>
+	
+	<select id="getLastCoupon" resultType="String">
+		select top 1 promoCode from bmh1506_coupon where userId=#{userId} and channelType=#{channelType} order by couponTime desc
+	</select>
+	
+</mapper>

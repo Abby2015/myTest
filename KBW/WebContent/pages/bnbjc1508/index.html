@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>“茶”了整个朋友圈，最想约的就是你。</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/apiRemote.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+//保存hasPromoCode_
+var _hasPromoCode = amGloble.getQueryParameter("hasPromoCode");
+if(_hasPromoCode == "" || _hasPromoCode==null || _hasPromoCode=="null"){
+	_hasPromoCode = "";
+}
+if (amGloble.config.debug == true) alert("[hasPromoCode]" + _hasPromoCode);
+if(!sessionStorage.getItem('hasPromoCode')){
+	sessionStorage.setItem("hasPromoCode",_hasPromoCode);
+}
+
+//if (amGloble.config.debug == true) alert("[promoCode2]" + promoCode2);
+//localStorage.setItem("hasPromoCode",_hasPromoCode);
+//if (amGloble.config.debug == true) alert("[localStorage_hasPromoCode]" + _hasPromoCode);
+
+if (amGloble.config.debug == true) alert("[sessionStorage_hasPromoCode_]" +sessionStorage.getItem('hasPromoCode'));
+if (amGloble.config.debug == true) alert("[localStorage_hasPromoCode_]" + localStorage.getItem('hasPromoCode'));
+
+//从优惠券直接进来的promocode2
+var promocode2 = amGloble.getQueryParameter("promoCode");
+if(promocode2 == "" || promocode2==null || promocode2=="null"){
+	promocode2 = "";
+}
+if(!sessionStorage.getItem('promocode2')){
+	sessionStorage.setItem("promocode2",promocode2);
+}
+//alert("[promoCode2]" + promocode2);
+//alert("[sessionStoragepromoCode2]" + sessionStorage.getItem('promocode2'));
+
+//保存sceneId
+var wxqr_scene_id_ = amGloble.getQueryParameter("wxqr_scene_id");
+if(wxqr_scene_id_ == "" || wxqr_scene_id_==null || wxqr_scene_id_=="null"){
+	wxqr_scene_id_ = "";
+}
+sessionStorage.setItem("wxqr_scene_id",wxqr_scene_id_);
+
+var UA = navigator.userAgent;
+var channelType = "", deviceType = "";
+if(UA.indexOf("iPhone")!= -1 || UA.indexOf("iPad")!=-1){
+	deviceType = "1";
+}else if(UA.indexOf("Android")!= -1){
+	deviceType = "0";
+}else{
+	deviceType = "2";
+}
+sessionStorage.setItem('deviceType', deviceType);
+if(UA.indexOf("MicroMessenger")!= -1){
+	channelType = "1";
+}else{
+	if(deviceType == "1" || deviceType == "0"){
+		channelType = "0";
+	}else{
+		channelType = "2";
+	}
+}
+sessionStorage.setItem('channelType', channelType);
+
+if(channelType!="1"){
+	if(deviceType == "1" || deviceType == "0"){
+		location.href = amGloble.config.selfRef + "pages/bnbjc1508/mobile.html";
+	}else{
+		location.href = amGloble.config.selfRef + "pages/bnbjc1508/web.html";
+	}
+}else{
+	var tag_ = amGloble.getQueryParameter("tag");
+	if(tag_ == "" || tag_==null || tag_=="null"){
+		tag_ = "";
+	}
+	sessionStorage.setItem('tag',tag_);
+	var sid = sessionStorage.getItem("sid");
+	if (amGloble.config.debug == true) alert("sid===" + sid);
+	  if ( sid == null || sid == "null" || sid == "") {
+		location.href = amGloble.config.selfRef + "pages/bnbjc1508/wx_redirect.html";
+	}
+}   
+</script>
+
+<link href="http://summer.kfc.com.cn/BNBJC/styles/bnbjc1508/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://summer.kfc.com.cn/BNBJC/styles/bnbjc1508/fruittea.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="loading"></div>
+<div style="width:0px;height:0px">
+<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/linkPic.jpg" alt="分享图标" width="0" height="0"/>
+</div>
+<div class="wrap">
+  <div class="main">
+  	<!--header-->
+    	<div class="topline" style="display:none">
+        	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/bt_product.png" class="topbt product" alt="了解产品"/>
+            <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/bt_rule.png" class="topbt rule" alt="活动规则"/>
+            <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/bt_ticket.png" class="topbt light" alt="我的尝鲜券"/>
+            <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/bt_ticket_gray.png" class="topbt gray" style="display:none" alt="我的尝鲜券"/>
+            <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/logo.png" class="logo" alt="KFC"/>
+            <div class="tasteticket" style="display:none;">
+            	<span class="uppromptfont">尝鲜券拿好!</span>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_upprompt.png" class="upprompt" alt=""/>
+            </div>
+        </div>
+    <!--header end-->
+    
+    <!--page1.0 start-->
+    <div class="page page10">
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_xrmmc.png" class="xrmmc" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_yt.png" class="yt" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_note.png" class="picnote" alt=""/>
+                <div class="bt_green bt_yt">调茶约TA</div>
+            </div>
+       </div>
+    </div>
+    <!--page1.0 end--> 
+    
+    <!--page1.2 start-->
+    <div class="page page12">
+       <div class="productblock">
+       		<div class="productinfo">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea2.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_notenew.png" class="picnotenew" alt=""/>
+                <div class="bt_green bt_return">返回</div>
+            </div>
+       </div>
+       <div class="productfonts">
+       		<span class="fontf39307">清新柠檬</span>和<span class="font0a8c38">小青金桔</span>，邂逅新鲜泡制的红茶，<br/>
+清香四溢，酸甜冰爽。<br/>
+看得见鲜果的鲜果茶，就在KFC等你来约哦！
+       </div>
+    </div>
+    <!--page1.2 end-->
+    
+    <!--page2.0 start-->
+    <div class="page page20">
+       <div class="cupblock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_emptycup.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_here.png" class="prompthere" alt=""/>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="topslogan">亲手现调鲜果茶，</p>
+           <p class="botslogan">约TA一起冰冰爽!</p>
+        </div>
+    </div>
+    <!--page2.0 end-->
+    
+    <!--page2.1 start-->
+    <div class="page page21">
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_note.png" class="picnote" alt=""/>
+                <div class="bt_green bt_yt">约TA来伴</div>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="topslogan">哇， 果真好茶。</p>
+           <p class="botslogan">速速去约小伙伴！</p>
+        </div>
+    </div>
+    <!--page2.1 end-->
+    
+    <!--page2.2.1 start-->
+    <div class="page page221">
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_note.png" class="picnote" alt=""/>
+                <div class="bt_green bt_yt">保存至卡包</div>
+                <div class="closefont">关闭</div>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="topslogan">TA说：约就约咯。</p>
+           <p class="botslogan font15">和我喝杯鲜果茶，从说学逗唱谈到人生哲学吧。</p>
+        </div>
+    </div>
+    <!--page2.2.1 end-->
+    
+    <!--page2.2.2 start-->
+    <div class="page page222">
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <div class="bt_green bt_close">关闭</div>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="topslogan">好茶要细细品，缘分要慢慢等。</p>
+           <p class="botslogan font15">你约的TA正在路上飞奔……</p>
+        </div>
+    </div>
+    <!--page2.2.2 end-->
+    
+    <!--page2.2 start-->
+    <div class="page page22">
+       <div class="shareblock">
+       		<div class="sharediv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_share.png" class="teacup" alt=""/>
+            </div>
+       </div>
+       <div class="sharesolgan">
+          <p>约TA , 约TA, 约TA！</p>
+          <p>一起乐享尝鲜优惠。</p>
+       </div>
+    </div>
+    <!--page2.2 end-->
+    
+    <!--page3.0 start-->
+    <div class="page page30"> 	
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_note.png" class="picnote" alt=""/>
+                <div class="bt_green bt_yt">我也约约茶</div>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="botslogan font13">接受TA的约约茶，共享夏日冰冰爽。</p>
+        </div>
+    </div>
+    <!--page3.0 end-->
+    
+    <!--page4.0 start-->
+    <div class="page page40">
+       <div class="teablock">
+       		<div class="teacupdiv">
+            	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_tea.png" class="teacup" alt=""/>
+                <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/pic_note.png" class="picnote" alt=""/>
+                <div class="bt_green bt_yt">我也约约茶</div>
+            </div>
+       </div>
+       <div class="slogan">
+           <p class="topslogan">啊哦，TA被人抢先一步约走啦。</p>
+           <p class="botslogan">没关系， 自己调一杯去约TA。</p>
+        </div>
+    </div>
+    <!--page4.0 end-->
+    
+  </div>
+</div>
+
+<div class="overlay"></div>
+
+<!--activity rule-->
+<div class="rule_pop popup_rule">
+  <div class="poptopline">
+  	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/icon_close.png" class="close_icon" alt="close"/>
+    <img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/logo.png" class="poplogo" alt="KFC"/>
+  </div>
+  <div  class="rule_areas">
+  	<h3>活动规则</h3>
+    <div id="wrapper" class="rule_cont"> 
+     <div id="scroller">
+      <div class="rule_block">
+      	<span>活动时间：</span>2015年8月10日-2015年8月29日
+       </div>
+       <div class="rule_block">
+      	 <span>参与方式：</span>
+         <p><em>1.</em>活动期间，关注肯德基官方微信，参加"夏日约约茶"活动。用户A发起约茶邀请，摇动手机，调出伴柠伴桔鲜果茶，将活动页面分享至朋友圈，用户A和第一个点击此链接的用户B，均可各获得伴柠伴桔鲜果茶"10元尝鲜券"一张。</p>
+   	 	 <p><em>2.</em>活动期间，每人每天只可发起一次"夏日约约茶"互动活动！</p>
+       	 <p><em>3.</em>活动期间，每个微信号最多可领取30张10元尝鲜券。</p>
+      </div>
+      <div class="rule_block">
+      	<span>伴柠伴桔鲜果茶10元尝鲜券说明：</span>
+      	<p class="orangefont paddingleft0">请在餐厅现场收银员的指导下点击确认使用</p>
+        <p><em>1.</em>尝鲜券有效期：2015年8月10日-2015年8月30日，仅限正餐时段（9:30-23:00）使用。<a style="color: red">全国限量100万张，先到先得，送完即止。 </a></p>
+      	<p><em>2.</em>本券仅限在有此产品供应的中国大陆肯德基餐厅使用，交通枢纽、旅游景区的餐厅以及精选餐厅除外。具体情况以餐厅公示为准。</p>
+      	<p><em>3.</em>仅限微信卡包中出示使用，每张仅限使用一次,，截屏、复制、修改无效。</p>
+        <p><em>4.</em>不适用于肯德基宅急送。 不适用于肯德基甜品站。</p>
+      	<p><em>5.</em>请在点餐前出示，产品和包装以餐厅实际供应为准。</p>
+      	<p><em>6.</em>不可兑换现金，且不能与其他优惠同时使用。</p>
+        <p><em>7.</em>中国肯德基只认可肯德基官方微信等官方途径发布的本券，您从其他途径获得的将不能在肯德基餐厅使用，请注意下载渠道。</p>
+      </div>
+      <div class="rule_block">
+      	<span>其他：</span>
+      	<p><em>1.</em>本次活动的主办方为百胜餐饮集团中国事业部肯德基品牌（统一简称 "主办方"）。</p>
+      	<p><em>2.</em>对于任何通过不正当手段参加活动者，主办方有权在不事先通知的前提下取消其参加活动及得奖资格。</p>
+      <p><em>3.</em>主办方不对因网络传输原因而导致参加者提交的信息错误承担任何责任。</p>
+      <p><em>4.</em>如遇不可抗力因素，本活动因故无法进行时，主办方在法律允许的范围内有权决定取消、终止、修改或暂停本活动。</p>
+
+      </div>
+      </div> 
+   </div>   
+  </div>
+  <div class="arrowdown">
+	<img src="http://summer.kfc.com.cn/BNBJC/images/bnbjc1508/icon_arrowdown.png"  alt="next"/>
+  </div>
+  
+  
+  <audio src="http://summer.kfc.com.cn/BNBJC/audio/bnbjc1508/WATER.mp3"  id="myaudio"  preload="auto" style="display:none;"></audio>
+</div>
+
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/iscroll.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/sdc_MobWeb.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/jsticketapi-1.1.min.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/shake.js" type="text/javascript"></script>
+<script src="http://summer.kfc.com.cn/BNBJC/scripts/bnbjc1508/index.js" type="text/javascript"></script>
+<script type="text/javascript">
+//锁屏
+$(document).ready(function(){
+	function stopScrolling(touchEvent) { 
+		touchEvent.preventDefault(); 
+	} 
+	document.addEventListener('touchstart', stopScrolling, false); 
+	document.addEventListener('touchmove', stopScrolling, false); 
+});
+
+/* window.onload = function() {
+    //create a new instance of shake.js.
+    var myShakeEvent = new Shake({
+        threshold: 15
+    });
+    // start listening to device motion
+    myShakeEvent.start();
+    // register a shake event
+    window.addEventListener('shake', shakeEventDidOccur, false);
+    //shake event callback
+    function shakeEventDidOccur () {
+        //put your own code here etc.
+        alert('Shake!');
+        
+      	  
+      
+    }
+}; */
+</script>
+</body>
+</html>

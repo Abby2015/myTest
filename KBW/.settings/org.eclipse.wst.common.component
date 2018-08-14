@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="KBW">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module deploy-path="/WEB-INF/classes" handle="module:/org.jboss.ide.eclipse.archives.webtools.filesets.vcf.FilesetComponentResolver/path=%2FKBS%2Fbuild%2Fclasses&amp;includes=com%2F**&amp;excludes=">
+            <dependency-type>consumes</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="KBC.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/KBC/KBC">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="KBW"/>
+    </wb-module>
+</project-modules>

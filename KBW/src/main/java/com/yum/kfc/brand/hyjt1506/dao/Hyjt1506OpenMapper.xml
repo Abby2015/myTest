@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.hyjt1506.dao.Hyjt1506OpenMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.hyjt1506.pojo.Hyjt1506Open">
+		INSERT INTO hyjt1506_open
+			([id],[userId],[channelType],[deviceId],[deviceType],[inviterId],[inviteChannelType],[ipAddr],[openTime],[sceneId])
+		VALUES
+			(#{id},#{userId},#{channelType},#{deviceId},#{deviceType},#{inviterId},#{inviteChannelType},#{ipAddr},#{openTime},#{sceneId})
+	</insert>
+	
+	<select id="getTagContent" parameterType="String" resultType="String">
+		select tagContent from hyjt1506_open with(nolock) where id=#{openId}
+    </select>
+</mapper>

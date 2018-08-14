@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.dbwy1506.dao.Dbwy1506UserMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.dbwy1506.pojo.Dbwy1506User">
+		INSERT INTO dbwy1506_user ([userId],[nickName],[sex],[province],[city]) VALUES (#{userId},#{nickName},#{sex},#{province},#{city})
+	</insert>
+	
+	<select id="getNickName" parameterType="String" resultType="String">
+		select top 1 nickName from dbwy1506_user with(nolock) where userId=#{userId}
+    </select>
+    
+    <select id="getUserCount" parameterType="String" resultType="int">
+		select count(*) from dbwy1506_user with(nolock) where userId=#{userId}
+    </select>
+</mapper>

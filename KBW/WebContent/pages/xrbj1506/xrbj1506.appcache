@@ -1,0 +1,62 @@
+CACHE MANIFEST
+#version 1.0 
+CACHE:
+    http://summer.kfc.com.cn/XRBJ/styles/xrbj1506/common.css
+    http://summer.kfc.com.cn/XRBJ/styles/xrbj1506/halfprice.css
+
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/apiRemote.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/boy.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/fail.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/girl.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/index.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/jquery-1.8.0.min.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/sdc_MobWeb.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/success.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/transfer.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/wx_redirect.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/wx_share_redirect.js
+	http://summer.kfc.com.cn/XRBJ/scripts/xrbj1506/wx_share.js
+	
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/back.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_button1.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_button2.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_fail.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_ice_cream.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/bosom_share.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/button1.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/close_icon.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/close.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/fail_p.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/footer.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/gays_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/gays_button1.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/gays_button2.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/gays_share.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/half_ticket.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/ice_cream.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/linkPic.jpg
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/linkPic2.jpg
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/new_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/next.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/page1-p.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/page2-p.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/page2-p1.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/page3-p.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/pic1.jpg
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/pic2.jpg
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/pic3.jpg
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/product_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/product_desc.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/product.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/rule_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/rule.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/share_pop.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/success_p.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/ticket_button.png
+    http://summer.kfc.com.cn/XRBJ/images/xrbj1506/ticket.png
+NETWORK:
+    *
+FALLBACK
+    transfer.html wx_share_redirect.html

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.dzp1807.dao.Dzp1807OrderMapper">
+	
+	<insert id="saveOrder" parameterType="com.yum.kfc.brand.dzp1807.pojo.Dzp1807Order">
+		<bind name= "tbl_sid" value="@com.yum.kfc.brand.common.utils.MybatisTblShardStrategy@byLastDigitOrLenMod10(#{ssoUserId})" />
+		INSERT INTO dzp1807_order_${tbl_sid}
+			([orderId],[userId],[ssoUserId],[crmUserCode],[phone],[channelType],[deviceType],[status],[isReverse],[ipAddr],[createTime],[modifyTime],[isFree])
+		VALUES
+			(#{orderId},#{userId},#{ssoUserId},#{crmUserCode},#{phone},#{channelType},#{deviceType},#{status},#{isReverse},#{ipAddr},#{createTime},#{modifyTime},#{isFree})
+	</insert>
+	
+</mapper>

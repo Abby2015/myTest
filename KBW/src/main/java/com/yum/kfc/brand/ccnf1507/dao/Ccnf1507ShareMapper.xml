@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.ccnf1507.dao.Ccnf1507ShareMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.ccnf1507.pojo.Ccnf1507Share">
+		INSERT INTO ccnf1507_share
+			([id],[openId],[userId],[channelType],[deviceType],[mediaType],[shareUrl],[shareResult],[shareTime])
+		VALUES
+			(#{id},#{openId},#{userId},#{channelType},#{deviceType},#{mediaType},#{shareUrl},#{shareResult},#{shareTime})
+	</insert>
+	
+</mapper>

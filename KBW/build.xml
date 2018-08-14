@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 定义一个工程，默认任务为warFile。 -->
+<project name="kbw_build" default="warFile" basedir=".">
+    
+    <!-- 自定义属性开始 -->
+	<!-- war包存放的目录-->
+    <property name="warFilePath" value="c:/kbw_war_file"></property>
+	<!-- war包的名称-->
+    <property name="warFileName" value="brandkfc_szz1604.war"></property>
+	<!-- 指定导出的活动，备注：每次活动class和WebContent目录下的文件夹名称必须相同，properties前缀名称也要进行对应-->
+    <property name="campaignName" value="szz1604"></property>
+	<!-- 自定义属性结束 -->
+	
+	
+    <!-- 定义路径，编译java文件时用到的jar包。 -->
+    <path id="project.lib">
+        <fileset dir="${basedir}/WebContent/WEB-INF/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    
+    <!-- 定义任务，清空任务：清空原有的class文件，创建新的build路径。 -->
+    <target name="clean">
+        <delete dir="${basedir}/build" />
+        <mkdir dir="${basedir}/build" />
+    </target>
+    
+    <!-- 定义任务，编译src文件夹中的java文件，编译后的class文件放到创建的文件夹下。 -->
+    <target name="compile" depends="clean">
+        <javac destdir="${basedir}/build" includeantruntime="false" encoding="UTF-8">
+        	<src path="${basedir}/src/main/java/com/yum/kfc/brand/common"></src>
+        	<src path="${basedir}/src/main/java/com/yum/kfc/brand/${campaignName}"></src>
+            <classpath refid="project.lib"></classpath>
+        </javac>
+    </target>
+    
+    <!-- 定义默认任务，将class文件集合成jar包。 -->
+    <target name="warFile" depends="compile">
+    	<!-- 将dao中的mapper.xml文件复制到build的dao目录下 -->
+    	<copy todir="${basedir}/build/com/yum/kfc/brand/${campaignName}/dao">
+            <fileset dir="${basedir}/src/main/java/com/yum/kfc/brand/${campaignName}/dao">
+            	<include name="*.xml"/>
+            	<exclude name="*.java"/>
+            </fileset>
+        </copy>
+    	
+    	<!-- 复制配置文件到build的更目录下 -->
+        <copy todir="${basedir}/build">
+            <fileset dir="${basedir}/src/main/resources">
+            	<include name="cacheConfig/*.*"/>
+            	<include name="ehcacheConfig/*.*"/>
+            	<include name="mybatisConfig/*.*"/>
+            	<include name="springConfig/*.*"/>
+            	<include name="campaignConfig/${campaignName}/*.*"/>
+            	<include name="web/*.*"/>
+                <include name="logback.xml"/>
+                <include name="basic.properties"/>
+            </fileset>
+        </copy>
+    	
+    	<!--打war包-->
+        <war destfile="${warFilePath}/${warFileName}" webxml="${basedir}/WebContent/WEB-INF/web.xml">
+            <!-- 将非jar和非class文件拷贝到war包的对应路径下。 -->
+            <fileset dir="${basedir}/WebContent">
+               	<include name="**/${campaignName}/*.*" />
+               	<include name="libs/*.*" />
+               	<include name="META-INF/*.*" />
+               	<include name="templates/*.*" />
+                <exclude name="**/*.jar"/>
+                <exclude name="**/*.class"/>
+            </fileset>
+            <!-- 将jar和class文件拷贝到war包的对应路径下。 -->
+            <lib dir="${basedir}/WebContent/WEB-INF/lib" />
+            <classes dir="${basedir}/build" />
+        </war>
+    </target>
+    
+</project>

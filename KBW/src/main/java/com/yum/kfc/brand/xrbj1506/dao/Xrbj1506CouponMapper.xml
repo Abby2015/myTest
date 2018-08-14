@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yum.kfc.brand.xrbj1506.dao.Xrbj1506CouponMapper">
+	<insert id="insert" parameterType="com.yum.kfc.brand.xrbj1506.pojo.Xrbj1506Coupon">
+		INSERT INTO xrbj1506_coupon
+			([id],[openId],[userId],[channelType],[deviceType],[inviterId],[inviteChannelType],[menuType],[askType],[promoCode],[isUsed],[couponTime])
+		VALUES
+			(#{id},#{openId},#{userId},#{channelType},#{deviceType},#{inviterId},#{inviteChannelType},#{menuType},#{askType},#{promoCode},#{isUsed},#{couponTime})
+	</insert>
+	
+	<insert id="batchInsert" parameterType="java.util.List">
+	 	<foreach collection="couponList" item="item" index="index" separator=";" >
+	 		INSERT INTO xrbj1506_coupon
+				([id],[openId],[userId],[channelType],[deviceType],[inviterId],[inviteChannelType],[menuType],[askType],[promoCode],[isUsed],[couponTime])
+			VALUES
+				(#{id},#{openId},#{userId},#{channelType},#{deviceType},#{inviterId},#{inviteChannelType},#{menuType},#{askType},#{promoCode},#{isUsed},#{couponTime})
+	    </foreach>  
+	</insert>
+	
+	<select id="getValidCount" resultType="int">
+		select count(*) from xrbj1506_coupon with(nolock) where askType=#{askType} and inviterId=#{userId} and userId != #{userId}
+		and inviteChannelType=#{channelType} and couponTime between #{fromTime} and #{toTime}
+	</select>
+	
+	<select id="getValidCountBak" resultType="int">
+		select count(*) from xrbj1506_coupon with(nolock) where askType=#{askType} and userId=#{userId}
+		and channelType=#{channelType} and couponTime between #{fromTime} and #{toTime}
+	</select>
+	
+	<select id="getAllCoupons" resultType="com.yum.kfc.brand.xrbj1506.pojo.CouponTotal">
+		select promoCode, askType, u.nickName as inviterName, couponTime from xrbj1506_coupon c with(nolock) left join xrbj1506_user u with(nolock) on c.inviterId=u.userId 
+		where c.userId=#{userId} and c.channelType=#{channelType} order by c.couponTime desc
+	</select>
+	
+	<select id="getMyCoupon" resultType="String">
+		select top 1 promoCode from xrbj1506_coupon with(nolock) where isUsed=0 and userId=#{userId} and channelType=#{channelType} order by couponTime desc
+	</select>
+	
+</mapper>
